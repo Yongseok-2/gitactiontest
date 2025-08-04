@@ -33,5 +33,4 @@ jobs:
 
     - name: SCP WAR file to AWS server
       run: |
-        sshpass -p "${{ secrets.SERVER_PASSWORD }}" \
-        scp -o StrictHostKeyChecking=no demo/target/demo-0.0.1-SNAPSHOT.war root@${{ secrets.SERVER_HOST }}:/opt/tomcat/bin
+        sshpass -p "${{ secrets.SERVER_PASSWORD }}" scp -o StrictHostKeyChecking=no demo/target/demo-0.0.1-SNAPSHOT.war root@${{ secrets.SERVER_HOST }}:/opt/tomcat/webapps
